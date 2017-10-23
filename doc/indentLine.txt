@@ -1,0 +1,19 @@
+*indentline.txt*        Show vertical lines for indent with conceal feature
+
+CONTENTS                                        *indentline-contents*
+Introduction                                    |indentline-introduction|
+Config                                          |indentline-config|
+Commands                                        |indentline-commands|
+==============================================================================
+INTRODUCTION                                    *indentline-introduction*
+Indentlines is a plugin for displaying indentlines a la Sublime Text.
+==============================================================================
+CONFIG                                          *indentline-config*
+
+
+==============================================================================
+COMMANDS                                        *indentline-commands*
+
+*IndentlinesEnable*   Enable indentline
+*IndentlinesDisable*  Disable indentline
+*IndentlinesRefresh*  Redraw indentlines to respect changes to shiftwidth
