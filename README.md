@@ -11,3 +11,7 @@ Plug 'sbdchd/indentline.vim'
 ```
 
 [0]: https://github.com/Yggdroot/indentLine
+
+## License
+
+MIT
