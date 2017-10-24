@@ -10,7 +10,14 @@ Indentlines is a plugin for displaying indentlines a la Sublime Text.
 ==============================================================================
 CONFIG                                          *indentline-config*
 
-
+Note: indentline is enabled by default
+>
+  " config vars with default values
+  let g:indentline_ignored_filetypes = ['help', 'man']
+  let g:indentline_ignored_buftypes = ['terminal']
+  let g:indentline_char = '¦'
+  let g:indentline_max_indent_level = 20
+<
 ==============================================================================
 COMMANDS                                        *indentline-commands*
 

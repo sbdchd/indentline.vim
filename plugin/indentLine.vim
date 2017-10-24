@@ -26,8 +26,8 @@ function! s:Enable() abort
     let w:indentline_indent_markers = []
   endif
 
-  let &concealcursor = get(g:, 'indentline_concealcursor', 'inc')
-  let &conceallevel = get(g:, 'indentline_conceallevel', 2)
+  let &concealcursor = 'inc'
+  let &conceallevel = 2
 
   let space = &shiftwidth == 0 ? &tabstop : &shiftwidth
 
@@ -35,7 +35,7 @@ function! s:Enable() abort
 
   let conceal_char = get(g:, 'indentline_char', default_indentline_char)
 
-  for i in range(space + 1, space * get(g:, 'indentline_indent_level', 20) + 1, space)
+  for i in range(space + 1, space * get(g:, 'indentline_max_indent_level', 20) + 1, space)
     call add(w:indentline_indent_markers,
           \ matchadd('Conceal', '^\s\+\zs\%' . i . 'v ', 0, -1, {'conceal': conceal_char}))
   endfor
