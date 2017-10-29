@@ -22,8 +22,11 @@ function! s:Enable() abort
     return
   endif
 
-  if !exists('w:indentline_indent_markers')
-    let w:indentline_indent_markers = []
+  let w:indentline_indent_markers = get(w:, 'indentline_indent_markers', [])
+
+  " don't find the matches again if they have already been found
+  if !empty(w:indentline_indent_markers)
+    return
   endif
 
   let &concealcursor = 'inc'
@@ -35,7 +38,8 @@ function! s:Enable() abort
 
   let conceal_char = get(g:, 'indentline_char', default_indentline_char)
 
-  for i in range(space + 1, space * get(g:, 'indentline_max_indent_level', 20) + 1, space)
+  " NOTE: this seems to be a performace killer. Beware.
+  for i in range(space + 1, space * get(g:, 'indentline_max_indent_level', 15) + 1, space)
     call add(w:indentline_indent_markers,
           \ matchadd('Conceal', '^\s\+\zs\%' . i . 'v ', 0, -1, {'conceal': conceal_char}))
   endfor
